@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.newsapp.screens.HomeScreen
 import com.example.newsapp.ui.theme.NewsAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,18 +30,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
-
-@Composable
-fun HomeScreen(innerPadding : PaddingValues){
-    Column (
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(innerPadding)
-            .padding(20.dp)
-    ) {
-
     }
 }
 
