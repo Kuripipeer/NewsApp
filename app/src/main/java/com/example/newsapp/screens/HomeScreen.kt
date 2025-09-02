@@ -36,6 +36,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.newsapp.components.CardLastNews
+import com.example.newsapp.components.CardWorldNews
 import com.example.newsapp.components.HeaderTabs
 import com.example.newsapp.icons.Add_home
 import com.example.newsapp.ui.theme.NewsAppTheme
@@ -102,45 +104,7 @@ fun HomeScreen(innerPadding : PaddingValues) {
                 .padding(top = 20.dp, bottom = 30.dp)
         )
         // Lista de noticias
-        LazyRow (
-            modifier = Modifier
-                .fillMaxWidth()
-        ) {
-            items(noticias){ idx ->
-                Card (
-                    modifier = Modifier
-                        .width(300.dp)
-                        .height(200.dp)
-                        .padding(end = 10.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = RecentCards
-                    ),
-                    shape = RoundedCornerShape(25.dp)
-                ) {
-                    Column (
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(20.dp),
-                        verticalArrangement = Arrangement.Bottom
-                    ){
-                        Text(
-                            text = idx,
-                            fontSize = 26.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = Color.White,
-                            modifier = Modifier
-                                .padding(bottom = 10.dp)
-                        )
-                        Text(
-                            text = "febrero 08 - 2024",
-                            fontSize = 14.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = Color.White,
-                        )
-                    }
-                }
-            }
-        }
+        CardLastNews(noticias)
 
         // Noticias al rededor del mundo
         Text(
@@ -150,36 +114,7 @@ fun HomeScreen(innerPadding : PaddingValues) {
             modifier = Modifier
                 .padding(top = 20.dp, bottom = 20.dp)
         )
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(2)
-        ) {
-            items(noticias){ news ->
-                Card (
-                    modifier = Modifier
-                        .weight(1f)
-                        .height(220.dp)
-                        .padding(10.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = Color.LightGray
-                    ),
-                    shape = RoundedCornerShape(25.dp)
-                ) {
-                    Column (
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(10.dp),
-                        verticalArrangement = Arrangement.Bottom
-                    ){
-                        Text(
-                            text = news,
-                            fontSize = 14.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = Color.Black,
-                        )
-                    }
-                }
-            }
-        }
+        CardWorldNews(noticias)
     }
 }
 
