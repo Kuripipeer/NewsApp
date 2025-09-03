@@ -39,6 +39,7 @@ import androidx.compose.ui.unit.sp
 import com.example.newsapp.components.CardLastNews
 import com.example.newsapp.components.CardWorldNews
 import com.example.newsapp.components.HeaderTabs
+import com.example.newsapp.components.news
 import com.example.newsapp.icons.Add_home
 import com.example.newsapp.ui.theme.NewsAppTheme
 import com.example.newsapp.ui.theme.RecentCards
@@ -114,7 +115,7 @@ fun HomeScreen(innerPadding : PaddingValues) {
             modifier = Modifier
                 .padding(top = 20.dp, bottom = 20.dp)
         )
-        CardWorldNews(noticias)
+        CardWorldNews(news)
     }
 }
 
